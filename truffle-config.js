@@ -19,8 +19,10 @@
  */
 
 require('dotenv').config();
-const mnemonic = process.env["MNEMONIC"];
-const infuraProjectId = process.env["INFURA_PROJECT_ID"];
+const PASS_PHRASE = process.env["PASS_PHRASE"];
+const GOERLI_PROJECT_ID = process.env["GOERLI_PROJECT_ID"];
+const SEPOLIA_PROJECT_ID = process.env["SEPOLIA_PROJECT_ID"];
+const MUMBAI_PROJECT_ID = process.env["MUMBAI_PROJECT_ID"];
  
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 
@@ -49,9 +51,19 @@ module.exports = {
     // },
     //
     goerli: {
-       provider: () => new HDWalletProvider(mnemonic, `https://goerli.infura.io/v3/${infuraProjectId}`),
+       provider: () => new HDWalletProvider(PASS_PHRASE, `https://goerli.infura.io/v3/${GOERLI_PROJECT_ID}`),
        network_id: 5,       // Goerli's id
        chain_id: 5
+    },
+    Sepolia: {
+        provider: () => new HDWalletProvider(PASS_PHRASE, `https://goerli.infura.io/v3/${SEPOLIA_PROJECT_ID}`),
+        network_id: 5,       // Sepolia's id
+        chain_id: 5
+    },
+    Mumbai: {
+        provider: () => new HDWalletProvider(PASS_PHRASE, `https://goerli.infura.io/v3/${MUMBAI_PROJECT_ID}`),
+        network_id: 5,       // Mumbai's id
+        chain_id: 5
     }
   },
 

@@ -56,14 +56,19 @@ module.exports = {
        chain_id: 5
     },
     Sepolia: {
-        provider: () => new HDWalletProvider(PASS_PHRASE, `https://goerli.infura.io/v3/${SEPOLIA_PROJECT_ID}`),
-        network_id: 5,       // Sepolia's id
-        chain_id: 5
+        provider: () => new HDWalletProvider(PASS_PHRASE, `https://eth-sepolia.g.alchemy.com/v2/${SEPOLIA_PROJECT_ID}`),
+        network_id: 11155111,       // Sepolia's id
+        chain_id: 11155111,
     },
     Mumbai: {
-        provider: () => new HDWalletProvider(PASS_PHRASE, `https://goerli.infura.io/v3/${MUMBAI_PROJECT_ID}`),
-        network_id: 5,       // Mumbai's id
-        chain_id: 5
+        provider: () => new HDWalletProvider(PASS_PHRASE, `https://polygon-mumbai.g.alchemy.com/v2/${MUMBAI_PROJECT_ID}`),
+        network_id: 80001,       // Mumbai's id
+        chain_id: 80001,
+    },
+    Ganache: {
+        host: "127.0.0.1",
+        port: 7545,
+        network_id: 5777,
     }
   },
 

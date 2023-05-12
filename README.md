@@ -13,4 +13,7 @@ balance.toNumber()
 let send = await contract.sendCoin(accounts[1], 57, {from: accounts[0]})
 let balance2 = await contract.getBalance(accounts[1])
 balance2.toNumber() // should display 57
+
+truffle develop --network Mumbai
+truffle console --network Mumbai
 ```
